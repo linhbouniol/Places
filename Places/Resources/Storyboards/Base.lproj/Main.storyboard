@@ -17,10 +17,52 @@
                     <view key="view" contentMode="scaleToFill" id="Edo-fj-fTv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EBL-dq-eg4">
+                                <rect key="frame" x="2" y="258.5" width="371" height="150"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ySX-tC-xdm">
+                                        <rect key="frame" x="0.0" y="0.0" width="371" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude from -90 to 90" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YSF-fQ-xxZ">
+                                        <rect key="frame" x="0.0" y="40" width="371" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude from -180 to 180" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BZm-kq-f6x">
+                                        <rect key="frame" x="0.0" y="80" width="371" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-VA-niC">
+                                        <rect key="frame" x="0.0" y="120" width="371" height="30"/>
+                                        <state key="normal" title="Save Place"/>
+                                        <connections>
+                                            <action selector="createPlace:" destination="j3O-k7-PuI" eventType="touchUpInside" id="cbR-go-lGc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EBL-dq-eg4" firstAttribute="leading" secondItem="k97-py-aMH" secondAttribute="leading" constant="2" id="MH7-dK-AQF"/>
+                            <constraint firstItem="EBL-dq-eg4" firstAttribute="centerY" secondItem="Edo-fj-fTv" secondAttribute="centerY" id="Pxf-06-UMR"/>
+                            <constraint firstItem="k97-py-aMH" firstAttribute="trailing" secondItem="EBL-dq-eg4" secondAttribute="trailing" constant="2" id="fNV-mx-Yxx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="k97-py-aMH"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create Place" image="Plus" id="HdC-fy-8zc"/>
+                    <connections>
+                        <outlet property="latitudeTextField" destination="YSF-fQ-xxZ" id="EPb-0L-Aul"/>
+                        <outlet property="longitudeTextField" destination="BZm-kq-f6x" id="6Oo-WW-NAW"/>
+                        <outlet property="nameTextField" destination="ySX-tC-xdm" id="JQr-2w-yhv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9kz-Ha-meM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
