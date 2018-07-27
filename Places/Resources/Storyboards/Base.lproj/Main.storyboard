@@ -43,7 +43,7 @@
                                         <rect key="frame" x="0.0" y="120" width="371" height="30"/>
                                         <state key="normal" title="Save Place"/>
                                         <connections>
-                                            <action selector="createPlace:" destination="j3O-k7-PuI" eventType="touchUpInside" id="cbR-go-lGc"/>
+                                            <action selector="createPlace:" destination="j3O-k7-PuI" eventType="touchUpInside" id="L1T-o0-7Bj"/>
                                         </connections>
                                     </button>
                                 </subviews>

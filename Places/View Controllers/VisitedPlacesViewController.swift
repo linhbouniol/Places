@@ -12,7 +12,15 @@ class VisitedPlacesViewController: UIViewController, PlacesPresenter, PlacesTabl
 
     // MARK: - Properties
     
-    var placeController: PlaceController?
+    var placeController: PlaceController? {
+        didSet {
+            for childVC in childViewControllers {
+                if let vc = childVC as? PlacesPresenter {
+                    vc.placeController = placeController
+                }
+            }
+        }
+    }
     
     var mapViewController: MapViewController!   // want them to crash if they are nil
     var placesTableViewController: PlacesTableViewController!
@@ -28,9 +36,12 @@ class VisitedPlacesViewController: UIViewController, PlacesPresenter, PlacesTabl
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? PlacesPresenter {
+            vc.placeController = placeController
+        }
+        
         if let tableVC = segue.destination as? PlacesTableViewController {
             placesTableViewController = tableVC
-            placesTableViewController.placeController = placeController
             placesTableViewController.delegate = self
         }
         

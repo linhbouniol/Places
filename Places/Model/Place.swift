@@ -14,6 +14,6 @@ struct Place {
     
     init(name: String, latitude: Double, longitude: Double) {
         self.name = name
-        self.location = (latitude, longitude)
+        self.location = (latitude: latitude, longitude: longitude)
     }
 }
